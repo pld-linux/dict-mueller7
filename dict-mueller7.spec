@@ -35,7 +35,7 @@ Muellera.
 %setup -q -c
 
 cp %{SOURCE1} .
-sed -i -e 's/dictfmt -p/dictfmt --locale ru_RU.koi8r/' to-dict
+sed -i -e 's/dictfmt -p/dictfmt --locale ru_RU.koi8r -p/' to-dict
 
 %build
 chmod +x ./to-dict
