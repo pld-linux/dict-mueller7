@@ -15,6 +15,10 @@ Source1:	http://www.math.sunysb.edu/~comech/tools/to-dict
 URL:		http://mueller-dic.chat.ru/
 BuildRequires:	dictfmt
 BuildRequires:	dictzip
+%if "%(locale -a | grep '^ru_RU.koi8r$')" == ""
+BuildRequires:	glibc-localedb-all
+%endif
+BuildRequires:	sed >= 4.0
 Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -30,8 +34,10 @@ Muellera.
 %prep
 %setup -q -c
 
-%build
 cp %{SOURCE1} .
+sed -i -e 's/dictfmt -p/dictfmt --locale ru_RU.koi8r/' to-dict
+
+%build
 chmod +x ./to-dict
 ./to-dict --no-trans usr/local/share/dict/Mueller7GPL.koi mueller7.notr
 ./to-dict --src-data mueller7.notr mueller7.data && rm -f mueller7.notr
