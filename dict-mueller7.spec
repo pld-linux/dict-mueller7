@@ -7,9 +7,11 @@ Release:	1
 License:	GPL
 Group:		Applications/Dictionaries
 Source0:	http://mueller-dic.chat.ru/Mueller7GPL.tgz
+# Source0-md5:	0b3cd75e916f078b2caa4f2dc59508e4
 # This one is compressed with bzip2 (do not trust tgz!)
 #Source0:	http://www.geocities.com/mueller_dic/Mueller7GPL.tgz
 Source1:	http://www.math.sunysb.edu/~comech/tools/to-dict
+# Source1-md5:	3c1b69c290fb4c06bf3456baf5bf8b97
 URL:		http://mueller-dic.chat.ru/
 BuildRequires:	dictfmt
 BuildRequires:	dictzip
