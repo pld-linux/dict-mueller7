@@ -19,8 +19,8 @@ BuildRequires:	dictzip
 BuildRequires:	glibc-localedb-all
 %endif
 BuildRequires:	sed >= 4.0
-Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
+Requires:	dictd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -74,5 +74,5 @@ fi
 %defattr(644,root,root,755)
 %doc usr/local/share/mova/Mueller7.txt
 %lang(ru) %doc usr/local/share/mova/Mueller7_koi.txt
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/dictd/%{dictname}.dictconf
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dictd/%{dictname}.dictconf
 %{_datadir}/dictd/%{dictname}.*
