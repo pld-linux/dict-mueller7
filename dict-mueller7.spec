@@ -52,7 +52,7 @@ install -d $RPM_BUILD_ROOT{%{_datadir}/dictd,%{_sysconfdir}/dictd}
 dictprefix=%{_datadir}/dictd/%{dictname}
 echo "# Mueller English-Russian dictionary, 7-th edition (%{version})
 database %{dictname} {
-	data  \"$dictprefix.dict\"
+	data  \"$dictprefix.dict.dz\"
 	index \"$dictprefix.index\"
 }" > $RPM_BUILD_ROOT%{_sysconfdir}/dictd/%{dictname}.dictconf
 mv %{dictname}.* $RPM_BUILD_ROOT%{_datadir}/dictd
