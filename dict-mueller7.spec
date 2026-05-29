@@ -3,7 +3,7 @@ Summary:	English-Russian dictionary for dictd
 Summary(pl.UTF-8):	Słownik angielsko-rosyjski dla dictd
 Name:		dict-%{dictname}
 Version:	1.2
-Release:	9
+Release:	10
 License:	GPL
 Group:		Applications/Dictionaries
 Source0:	http://mueller-dic.chat.ru/Mueller7GPL.tgz
@@ -22,6 +22,7 @@ BuildRequires:	glibc-localedb-all
 BuildRequires:	sed >= 4.0
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
